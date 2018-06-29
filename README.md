@@ -25,7 +25,7 @@ storage.Single&lt;User&gt;("select * from [user] where [id] = @id", x => x["id",
 int rows = storage.Execute("update [user] set [name] = @name where [id] = @id", x => x["id", 1]["name", "tom"]);  
 
 3. 事务  
-using(var t = Storage.NewTransaction())  
+using(var t = Storage.NewTransaction()) // 不支持跨库事务  
 {  
    &nbsp;&nbsp;&nbsp;&nbsp;...  
    &nbsp;&nbsp;&nbsp;&nbsp;t.Complete();  
