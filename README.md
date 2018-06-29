@@ -10,7 +10,7 @@ using Utility.Storage.StorageHelper;
 
 ...  
 static Storage storage = new Storage("Server=*;Database=*;UID=*;PWD=*");  
-// 默认连接sql server, 如果是其他类型数据库，如mysql, 使用如下方式：  
+// 默认连接sql server, 若是其他类型数据库，需提供ConnectionProvider，如mysql：  
 // storage.ConnectionProvider = connectionString => new MySqlConnection(connectionString);  
 ...
 
