@@ -22,7 +22,7 @@ storage.Query&lt;User&gt;("select * from [user] where [id] > @id", x => x["id", 
 storage.Single&lt;User&gt;("select * from [user] where [id] = @id", x => x["id", 1]);  
 
 2. 操作  
-int rows = storage.Execute("update [user] set [name] = @name where [id] = @id", x => x["id", 1]["name", "tom"]);  
+int rows = storage.Execute("update [user] set [name] = @name where [id] = @id", x => x["id", 1]["name", "tom", 20]);  
 
 3. 事务  
 using(var t = Storage.NewTransaction()) // 不支持跨库事务  
